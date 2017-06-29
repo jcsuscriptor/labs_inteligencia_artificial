@@ -5,7 +5,7 @@ import cv2
 
 # Load an color image in grayscale
 # 0 o cv2.IMREAD_GRAYSCALE : Loads image in grayscale mode
-image = cv2.imread('img3.jpg') #,0)
+image = cv2.imread('img4.jpg') #,0)
 
 #Display an image
 #cv2.imshow('image',image)
@@ -21,7 +21,7 @@ gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 #Default: double param1=100, double param2=100, int min_radius=0, int max_radius=0
 circles = cv2.HoughCircles(gray,cv2.HOUGH_GRADIENT,1,20,
-                           param1=100,param2=100,minRadius=0,maxRadius=0)
+                           param1=50,param2=50,minRadius=0,maxRadius=0)
 
 # ensure at least some circles were found
 if circles is not None:
