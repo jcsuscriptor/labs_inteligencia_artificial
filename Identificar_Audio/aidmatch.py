@@ -22,7 +22,7 @@ import sys
 # API key for this demo script only. Get your own API key at the
 # Acoustid Web for your application.
 # http://acoustid.org/
-API_KEY = 'nGSjBWaR0v'
+API_KEY = 'API_KEY'
 
 
 # Python 2/3 Unicode compatibility: this `print_` function forces a
