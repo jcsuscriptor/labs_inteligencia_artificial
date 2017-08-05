@@ -2,12 +2,11 @@ import sys
 import json
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+import configuration
 import pprint
 
-client_credentials_manager = SpotifyClientCredentials(client_id = "client_id",
-                                   client_secret = "client_secret")
 
-sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+spotifyAPI = spotipy.Spotify(client_credentials_manager=configuration.client_credentials_manager)
 
 
 def getData():
@@ -43,7 +42,7 @@ index = 0
 while index < 5 and index < len(data):
     #print(index, data[index])
     name = data[index]['nombre']
-    results = sp.search(q='artist:' + name, type='artist')
+    results = spotifyAPI.search(q='artist:' + name, type='artist')
     artist = getArtist(results)
     dataSave.append(results)
     dataSave.append(artist)

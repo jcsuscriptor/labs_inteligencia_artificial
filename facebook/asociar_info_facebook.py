@@ -3,15 +3,13 @@ import facebook
 import json
 import re
 import logging
- 
+import configuration
 
 # create logger with 'spam_application'
 logger = logging.getLogger(__name__)
 
 
-ACCESS_TOKEN = "ACCESS_TOKEN" #os.environ['ACCESS_TOKEN']
-
-graph = facebook.GraphAPI(access_token=ACCESS_TOKEN, version='2.9')
+graph = facebook.GraphAPI(access_token=configuration.ACCESS_TOKEN, version='2.9')
 
 dataAsociadaFacebook = []
 

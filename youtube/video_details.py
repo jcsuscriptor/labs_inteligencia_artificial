@@ -1,20 +1,17 @@
 from apiclient.discovery import build
 from pprint import pprint
+import configuration
 
-# arguments to be passed to build function
-DEVELOPER_KEY = "DEVELOPER_KEY"
-YOUTUBE_API_SERVICE_NAME = "youtube"
-YOUTUBE_API_VERSION = "v3"
 
 # creating youtube resource object for interacting with API
-youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
-                    developerKey=DEVELOPER_KEY)
+youtubeAPI = build(configuration.YOUTUBE_API_SERVICE_NAME, configuration.YOUTUBE_API_VERSION,
+                developerKey=configuration.DEVELOPER_KEY)
 
 
 def video_details(video_id):
 
     # Call the videos.list method to retrieve video info
-    result = youtube.videos().list(
+    result = youtubeAPI.videos().list(
         id = video_id,
         part = "id,snippet,contentDetails,statistics",
     ).execute()
@@ -34,7 +31,7 @@ def video_details(video_id):
 def video_comments(video_id, max_results = 10):
     
     # Call the comments.list method to retrieve video comments
-    results = youtube.commentThreads().list(
+    results = youtubeAPI.commentThreads().list(
         videoId = video_id,
         part = "id,snippet",
         order = "relevance",

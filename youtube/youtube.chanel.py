@@ -1,20 +1,17 @@
 from apiclient.discovery import build
 from pprint import pprint
+import configuration
 
-# arguments to be passed to build function
-DEVELOPER_KEY = "DEVELOPER_KEY"
-YOUTUBE_API_SERVICE_NAME = "youtube"
-YOUTUBE_API_VERSION = "v3"
 
 # creating youtube resource object for interacting with API
-youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
-                    developerKey=DEVELOPER_KEY)
+youtubeAPI = build(configuration.YOUTUBE_API_SERVICE_NAME, configuration.YOUTUBE_API_VERSION,
+                developerKey=configuration.DEVELOPER_KEY)
 
 
 def video_channel(channel_id):
 
     # Call the videos.list method to retrieve video info
-    result = youtube.channels().list(
+    result = youtubeAPI.channels().list(
         id = channel_id,
         part = "snippet,statistics",
     ).execute()
@@ -28,13 +25,11 @@ def video_channel(channel_id):
     return video
     
  
-    
 
 if __name__ == "__main__":
     channel_id = "UCnQse6wRmpArT6zle6MT8CA"
     
     channelInfo = video_channel(channel_id)
      
-    
     pprint(channelInfo)
     

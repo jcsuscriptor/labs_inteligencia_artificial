@@ -19,6 +19,7 @@
 import os
 import json
 import pprint
+import configuration
 
 #python 2
 #import urllib
@@ -28,16 +29,13 @@ import urllib.request
 import urllib.parse
 
 
- 
-# get Facebook access token from environment variable
-ACCESS_TOKEN = "ACCESS_TOKEN" #os.environ['ACCESS_TOKEN']
 
 # build the URL for the API endpoint
 host = "https://graph.facebook.com"
 path = "/mcattanimusic"
 #params = urllib.parse.urlencode({"access_token": ACCESS_TOKEN})
 
-params = "access_token=" + ACCESS_TOKEN
+params = "access_token=" + configuration.ACCESS_TOKEN
 
 url = "{host}{path}?{params}".format(host=host, path=path, params=params)
 

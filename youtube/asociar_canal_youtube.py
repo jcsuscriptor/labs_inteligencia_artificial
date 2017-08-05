@@ -3,15 +3,13 @@ import json
 from pprint import pprint
 import logging
 import re
+import configuration
 
-# arguments to be passed to build function
-DEVELOPER_KEY = "DEVELOPER_KEY"
-YOUTUBE_API_SERVICE_NAME = "youtube"
-YOUTUBE_API_VERSION = "v3"
+
 
 # creating youtube resource object for interacting with API
-youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
-                    developerKey=DEVELOPER_KEY)
+youtubeAPI = build(configuration.YOUTUBE_API_SERVICE_NAME, configuration.YOUTUBE_API_VERSION,
+                    developerKey=configuration.DEVELOPER_KEY)
 
 
 # Regular Expressions for url field youtube. User or Channel
@@ -27,7 +25,7 @@ logging.info('Get File')
 def youtube_video_details(video_id):
 
     # Call the videos.list method to retrieve video info
-    result = youtube.videos().list(
+    result = youtubeAPI.videos().list(
         id = video_id,
         part = "snippet" #id,snippet,contentDetails,statistics",
     ).execute()
@@ -49,7 +47,7 @@ def youtube_video_details(video_id):
 def youtube_video_channel(channel_id):
 
     # Call the videos.list method to retrieve video info
-    resultChannel = youtube.channels().list(
+    resultChannel = youtubeAPI.channels().list(
         id = channel_id,
         part = "id,snippet,statistics",
     ).execute()
@@ -67,7 +65,7 @@ def youtube_video_channel(channel_id):
 def youtube_video_channel_forUsername(userName):
 
     # Call the videos.list method to retrieve video info
-    resultChannel = youtube.channels().list(
+    resultChannel = youtubeAPI.channels().list(
         forUsername = userName,
         part = "id,snippet,statistics",
     ).execute()

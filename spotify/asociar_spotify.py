@@ -4,13 +4,11 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import pprint
 import logging
+import configuration
 
 logger = logging.getLogger(__name__)
 
-#aut
-client_credentials_manager = SpotifyClientCredentials(client_id = "client_id",
-                                   client_secret = "client_secret")
-
+ 
 
 
 def getData():
@@ -41,11 +39,11 @@ def getArtist(data):
 
 def getSpotifyInfo(name):
     #search artist for name
-    results = spotipy.search(q='artist:' + name, type='artist')
+    results = spotifyAPI.search(q='artist:' + name, type='artist')
     return getArtist(results)
 
 #main
-spotipy = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+spotifyAPI = spotipy.Spotify(client_credentials_manager=configuration.client_credentials_manager)
 
 data = getData() 
 
