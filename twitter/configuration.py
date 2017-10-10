@@ -1,0 +1,9 @@
+
+
+#https://apps.twitter.com/
+
+CONSUMER_KEY = "FALTA"
+CONSUMER_SECRET = "FALTA"
+ACCESS_TOKEN_KEY = "FALTA"
+ACCESS_TOKEN_SECRET = "FALTA"
+ 

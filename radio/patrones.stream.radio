@@ -1,0 +1,107 @@
+Etiqueta: Audio
+
+<audio controls="">
+  <source src="http://streamingecuador.net:9350/FM_88" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+
+
+Tiene una pagina online.html
+http://www.radiocristal.com.ec/online.html
+http://www.alfa.com.ec/envivo/
+
+
+
+Incrustados:
+http://radios.grupomundodigital.io/sonoritmo/
+
+<iframe src="http://radiobandida.com/radiobandida/" frameborder="0" width="318" height="80" style="display: block; margin-left: auto; margin-right: auto;"></iframe>
+
+
+
+Archivo: Flash
+
+http://www.radiosoberana.com/
+http://realaudiomovilhd.com/soberanahd/grupov17_do.swf
+
+
+
+javascript: Player
+soundManager
+https://www.muses.org/
+
+
+
+
+
+
+http://miradiohd.com/sonorama/aacplayers.swf
+http://miradiohd.com/sonorama/aacplayers.swf/
+
+
+[playlist]
+NumberOfEntries=1
+File1=http://149.56.18.209:8168/
+http://149.56.18.209:8168/index.html
+
+Javascript:
+soundmanager2
+
+Audio
+sounManager.
+soundManager.createSound({
+		url: 'http://50.22.218.73:10939/;'
+
+		
+<script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>	
+
+MRP.insert({
+'url':'http://ecuamedios.net:8067/stream',
+'codec':'aac',
+'volume':100,
+'autoplay':true,
+'forceHTML5':true,
+'jsevents':true,
+'buffering':0,
+'title':'Sonorama FM - Powered by EcuaMedios',
+'wmode':'transparent',
+'skin':'http://miradiohd.com/sonorama/300.xml',
+'width':200,
+'height':130
+});		
+
+
+Info:
+response.xpath('//script[contains(@src,"https://hosted.muses.org/mrp.js")]/@src')
+   
+\s*MRP.insert\(\W*'url'\s*:\s*'(.+)'
+response.css('script').re('\s*MRP.insert\(\W*\'url\'\s*:\s*\'(.+)\'')
+
+
+proveedores:
+
+1)
+http://www.radiocumbresfm.com
+<a href="http://native.flashradio.info"></a>
+<script type="text/javascript">
+    $("#flashradio").flashradio({settings: "flashradio.xml"});
+</script>
+
+
+
+
+http://www.grupomundodigital.ec/
+http://ecuastreamhd.com/medios/radio/puniversal/joomla.php
+
+
+<div class="amazingaudioplayer-source" data-src="http://50.22.219.37:24371/stream" data-type="audio/mpeg"></div>
+<div class="amazingaudioplayer-source" data-src="http://audiostreamhd.net:8003/stream" data-type="audio/mpeg"></div>
+
+
+
+
+http://cp.usastreams.com/html5PlayerGratis.aspx?stream=http://149.56.18.209:8168/
+
+
+
